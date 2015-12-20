@@ -12,8 +12,18 @@
 #define SERIAL_TIMEOUT_CREATE_AP 7000
 
 
-ESP8266::ESP8266(HardwareSerial& esp, int esp_baud_rate) : esp(esp) {
-	esp.begin(esp_baud_rate);
+ESP8266::ESP8266(HardwareSerial& esp, espbaud_t esp_baud_rate) : esp(esp) {
+	switch(esp_baud_rate) {
+		case baud9600: esp.begin(9600); break;
+		case baud19200: esp.begin(19200); break;
+		case baud38400: esp.begin(38400); break;
+		case baud74880: esp.begin(74880); break;
+		case baud115200: esp.begin(115200); break;
+		case baud230400: esp.begin(230400); break;
+		case baud460800: esp.begin(460800); break;
+		case baud921600: esp.begin(921600); break;
+		default: esp.begin(9600); break;
+	}
 	esp.setTimeout(SERIAL_TIMEOUT);
 	while(!esp);
 	while(esp.available() > 0) esp.read();

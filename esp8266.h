@@ -12,6 +12,9 @@ public:
 };
 
 
+typedef enum {baud9600, baud19200, baud38400, baud74880, baud115200, baud230400, baud460800, baud921600} espbaud_t;
+
+
 class ESP8266{
 public:
 	/*
@@ -20,7 +23,7 @@ public:
 	they are set to 9600. You can change this by sending the ESP the following AT 
 	command, and then resetting: AT+CIOBAUD=115200
 	*/
-	ESP8266(HardwareSerial& espserial, int esp_baud_rate);
+	ESP8266(HardwareSerial& espserial, espbaud_t esp_baud_rate);
 
 	/*
 	Resets the ESP. Returns true once the ESP has replied "ready", false if the 
