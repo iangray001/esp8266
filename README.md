@@ -23,7 +23,9 @@ This library is designed to be simple to use with minimal code in your main sket
 		}
 	}
 
-`exampleclient/` contains an example of how to interact with the ESP from Python on the desktop.
+`exampleclient/exampleclient.py` is an example of how to interact with the ESP from Python on the desktop.
+
+`serialecho/serialecho.ino` is a simple serial echo sketch which is useful for directly communicating with the ESP. Load the sketch in the Arduino IDE and upload it to your board. Then, using the serial monitor, ensure line endings are set to "Both NL & CR" and you can manually enter AT commands and observe the response from the ESP8266.
 
 ## Requirements and connections
 The library currently requires a HardwareSerial connection between the Arduino and ESP. For example, for the Mega 2560 you could connect pin 17 (TX2) to RXD on the ESP and pin 16 (RX2) to TXD on the ESP and initialise the library as follows:
