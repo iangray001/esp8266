@@ -1,6 +1,6 @@
 # ESP8266
 
-An Arduinio library for communicating with the ESP8266 wifi to serial board.
+An Arduino library for communicating with the ESP8266 wifi to serial board.
 
 ## Description
 This library is designed to be simple to use with minimal code in your main sketch. The following example shows how to set up a simple TCP server which responds to incoming messages. Error checking is omitted for brevity; most library functions will return `false` if an error occured.
